@@ -524,11 +524,16 @@ transition: background-color 250ms cubic-bezier(0.4, 0, 0.2, 1);
     margin-left: auto;
 }
 .footer-sub-p{
+    font-weight: 500;
         font-size: 16px;
         line-height: 1.5;
         letter-spacing: 0.02em;
         color: #fff;
         margin-bottom: 16px;
+}
+.footer-form{
+    display: flex;
+    gap: 24px;
 }
 .footer-input{
     height: 40px;
@@ -597,25 +602,34 @@ transition: background-color 250ms cubic-bezier(0.4, 0, 0.2, 1);
     pointer-events: auto;
 }
 .modal{
-    position: relative;
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translateY(-50%,-50%);
     width: 408px;
     height: 80%;
-    max-height: 584px;
+    min-height: 584px;
     overflow: auto;
     padding: 72px 24px 24px 24px;
     box-shadow: 0 1px 1px 0 rgba(0, 0, 0, 0.14), 0 1px 3px 0 rgba(0, 0, 0, 0.12), 0 2px 1px 0 rgba(0, 0, 0, 0.2);
     background-color: #fcfcfc;
     border-radius: 4px;
-    transition: transform 250ms cubic-bezier(0.4, 0, 0.2, 1);
+    transition: transform 250ms cubic-bezier(0.4, 0, 0.2, 1),
+    border 250ms cubic-bezier(0.4, 0, 0.2, 1);
 }
 .button-close{
+    display: flex;
+    align-items: center;
+    justify-content: center;
     position: absolute;
     top: 24px;
     right: 24px;
+    width: 24px;
+    height: 24px;
+    padding: 0;
     background-color: #e7e9fc;
     border-radius: 50%;
     border: 1px solid rgba(0, 0, 0, 0.1);
-    padding: 8px;
     line-height: 0;
     transition: background-color 250ms cubic-bezier(0.4, 0, 0.2, 1);
 }
@@ -648,6 +662,7 @@ transition: background-color 250ms cubic-bezier(0.4, 0, 0.2, 1);
 .form-div{
     display: flex;
     flex-direction: column;
+    margin-bottom: 8px;
 
 }
 .form-label{
@@ -655,13 +670,10 @@ transition: background-color 250ms cubic-bezier(0.4, 0, 0.2, 1);
     font-family: "Roboto", sans-serif;
         font-weight: 400;
         font-size: 12px;
-        line-height: 1.16667;
+        line-height: 1.17;
         letter-spacing: 0.04em;
         color: #8e8f99;
         margin-bottom: 4px;
-}
-.form-div:not(:first-child){
-    margin-top: 8px;
 }
 .form-input{
     width: 100%;
@@ -670,6 +682,7 @@ transition: background-color 250ms cubic-bezier(0.4, 0, 0.2, 1);
     border-radius: 4px;
     background-color: transparent;
     padding-left: 38px;
+    outline: transparent;
         font-size: 12px;
         line-height: 1.17;
         letter-spacing: 0.04em;
@@ -686,17 +699,17 @@ position: relative;
 .form-input-icon{
     position: absolute;
     top: 50%;
-    left: 19px;
+    left: 16px;
     transform: translateY(-50%);
     stroke: #2e2f42;
+    transition: fill 250ms cubic-bezier(0.4, 0, 0.2, 1);
 }
 .form-div-checkbox{
-    margin-top: 16px;
-    margin-bottom: 40px;
+    margin-bottom: 24px;
 }
 .form-label-checkbox{
         font-size: 12px;
-        line-height: 1.16667;
+        line-height: 1.17;
         letter-spacing: 0.04em;
         color: #8e8f99;
 }
@@ -712,10 +725,14 @@ position: relative;
     height: 120px;
     border: 1px solid rgba(46, 47, 66, 0.4);
     border-radius: 4px;
-    padding: 8px 38px;
+    padding: 8px 16px;
     background-color: transparent;
+    outline: transparent;
 resize: none;
 transition: border-color 250ms cubic-bezier(0.4, 0, 0.2, 1);
+}
+.comment-div{
+    margin-bottom: 16px;
 }
 .form-comment::placeholder{
         color: rgba(46, 47, 66, 0.4);
@@ -735,11 +752,14 @@ transition: border-color 250ms cubic-bezier(0.4, 0, 0.2, 1);
     cursor: pointer;
     fill: transparent;
     margin-right: 8px;
+    transition: background-color 250ms cubic-bezier(0.4, 0, 0.2, 1), 
+    border 250ms cubic-bezier(0.4, 0, 0.2, 1), 
+    fill 250ms cubic-bezier(0.4, 0, 0.2, 1);
 }
 .form-checkbox:checked + .form-label-checkbox > .form-custom-checkbox{
     background-color: #404bbf;
     border: 0;
-    fill: #FFFFFF;
+    fill: #f4f4fd;
 }
 .form-policy-link{
     text-decoration: underline;
@@ -748,18 +768,22 @@ transition: border-color 250ms cubic-bezier(0.4, 0, 0.2, 1);
     color: #4d5ae5;
 }
 .submit-button{
-display: flex;
+display: block;
+min-width: 169px;
     padding: 16px 32px;
     margin-bottom: 24px;
     margin-left: 120px;
     border-radius: 4px;
-    border: 0;
+    border: none;
     box-shadow: 0 4px 4px 0 rgba(0, 0, 0, 0.15);
         background: #4d5ae5;
         font-size: 16px;
+        font-weight: 500;
             line-height: 1.5;
             letter-spacing: 0.04em;
             text-align: center;
             color: #fff;
             outline: none;
+            cursor: pointer;
+            transition: background-color 250ms cubic-bezier(0.4, 0, 0.2, 1);
 }
